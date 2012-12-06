@@ -42,7 +42,7 @@ task('gh-pages', ['docs', 'dist'], function() {
         sh(['git', 'clone', '--branch', 'gh-pages', 'git@github.com:CHH/spark', sys_get_temp_dir() . "/$temp"], ['fail_on_error' => true]);
         chdir($temp);
 
-        sh("cp -R $site/ .", ['fail_on_error' => true]);
+        sh("rsync -avr --delete --exclude=.git $site/ .", ['fail_on_error' => true]);
 
         sh("git add -A", ['fail_on_error' => true]);
         sh("git commit -m 'Update website'");
