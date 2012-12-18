@@ -6,7 +6,8 @@
         "chh/frozen-silex": "*@dev",
         "symfony/twig-bridge": "2.1.*@stable",
         "symfony/yaml": "2.1.*@stable",
-        "ext-sundown": "*"
+        "ext-sundown": "*",
+        "silex/silex": "*"
     },
     "minimum-stability": "dev"
 }

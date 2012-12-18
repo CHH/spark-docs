@@ -3,7 +3,6 @@
 namespace Bob\BuildConfig;
 
 use FrozenSilex\Freezer;
-use Pipe\AssetDumper;
 
 directoryTask('_site');
 directoryTask('_build');
@@ -15,9 +14,6 @@ directoryTask('_site/assets');
 
 desc('Freezes the Silex App in "app.php" to static HTML');
 task('site', ['_site', '_site/assets'], function() {
-    $assets = new \Pipe\Environment();
-    $assets->appendPath('assets');
-
     $app = require(__DIR__ . '/app.php');
 
     $app['pipe.css_compressor'] = 'yuglify_css';

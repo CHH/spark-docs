@@ -1,5 +1,5 @@
 {
-    "hash": "1746c9a146c489346e1ff87c75f107d5",
+    "hash": "240c9859899992744f643ae7306e5b56",
     "packages": [
         {
             "name": "chh/bob",
@@ -100,12 +100,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/CHH/frozen-silex",
-                "reference": "4fff6f5eb57fe864973a1e95f476ea00410f3893"
+                "reference": "4affa3f88032982a666fb74cfe345b3dbeb25f01"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/CHH/frozen-silex/archive/4fff6f5eb57fe864973a1e95f476ea00410f3893.zip",
-                "reference": "4fff6f5eb57fe864973a1e95f476ea00410f3893",
+                "url": "https://github.com/CHH/frozen-silex/archive/4affa3f88032982a666fb74cfe345b3dbeb25f01.zip",
+                "reference": "4affa3f88032982a666fb74cfe345b3dbeb25f01",
                 "shasum": ""
             },
             "require": {
@@ -114,7 +114,7 @@
                 "symfony/browser-kit": "2.1.*",
                 "silex/silex": "1.0.x-dev"
             },
-            "time": "2012-12-12 09:02:53",
+            "time": "2012-12-17 18:26:00",
             "bin": [
                 "bin/silex-freeze"
             ],
@@ -281,12 +281,12 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/CHH/pipe.git",
-                "reference": "c641195c12a4de05f3a55589250bcc4d250a2363"
+                "reference": "6bbafb9823fd69b9e8401c4623c15f573d84167a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/CHH/pipe/archive/c641195c12a4de05f3a55589250bcc4d250a2363.zip",
-                "reference": "c641195c12a4de05f3a55589250bcc4d250a2363",
+                "url": "https://github.com/CHH/pipe/archive/6bbafb9823fd69b9e8401c4623c15f573d84167a.zip",
+                "reference": "6bbafb9823fd69b9e8401c4623c15f573d84167a",
                 "shasum": ""
             },
             "require": {
@@ -307,7 +307,7 @@
                 "symfony/http-foundation": "Enable dynamic asset serving with Pipe\\Server",
                 "imagine/imagine": "Enable image compressors"
             },
-            "time": "2012-10-31 17:08:56",
+            "time": "2012-12-17 18:20:13",
             "bin": [
                 "bin/pipe",
                 "bin/pipe-server",
@@ -343,12 +343,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/CHH/pipe-silex",
-                "reference": "201994eaa024368e2e1738baed2b03b9bcf311a8"
+                "reference": "fbe6c6aa2da3d150ae90b3f2850d67641ed7faad"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/CHH/pipe-silex/archive/201994eaa024368e2e1738baed2b03b9bcf311a8.zip",
-                "reference": "201994eaa024368e2e1738baed2b03b9bcf311a8",
+                "url": "https://github.com/CHH/pipe-silex/archive/fbe6c6aa2da3d150ae90b3f2850d67641ed7faad.zip",
+                "reference": "fbe6c6aa2da3d150ae90b3f2850d67641ed7faad",
                 "shasum": ""
             },
             "require": {
@@ -359,7 +359,7 @@
                 "silex/silex": "*@dev",
                 "twig/twig": "*@stable"
             },
-            "time": "2012-10-31 18:10:45",
+            "time": "2012-12-17 18:21:32",
             "type": "library",
             "installation-source": "source",
             "autoload": {
@@ -411,252 +411,6 @@
             },
             "notification-url": "https://packagist.org/downloads/",
             "description": "Lame port of Ruby's Shellwords.rb"
-        },
-        {
-            "name": "dflydev/markdown",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/dflydev/dflydev-markdown.git",
-                "reference": "11f8faa2d17f717a038b4d372abd22a6ac4a15dc"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://github.com/dflydev/dflydev-markdown/archive/11f8faa2d17f717a038b4d372abd22a6ac4a15dc.zip",
-                "reference": "11f8faa2d17f717a038b4d372abd22a6ac4a15dc",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3"
-            },
-            "time": "2012-07-15 16:31:27",
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.0-dev"
-                }
-            },
-            "installation-source": "source",
-            "autoload": {
-                "psr-0": {
-                    "dflydev\\markdown": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Dragonfly Development Inc.",
-                    "email": "info@dflydev.com",
-                    "homepage": "http://dflydev.com"
-                },
-                {
-                    "name": "Beau Simensen",
-                    "email": "beau@dflydev.com",
-                    "homepage": "http://beausimensen.com"
-                },
-                {
-                    "name": "Michel Fortin",
-                    "homepage": "http://michelf.com"
-                },
-                {
-                    "name": "John Gruber",
-                    "homepage": "http://daringfireball.net"
-                }
-            ],
-            "description": "PHP Markdown & Extra",
-            "homepage": "http://github.com/dflydev/dflydev-markdown",
-            "keywords": [
-                "markdown"
-            ]
-        },
-        {
-            "name": "doctrine/common",
-            "version": "2.3.x-dev",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/doctrine/common",
-                "reference": "bb0aebbf234db52df476a2b473d434745b34221c"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://github.com/doctrine/common/archive/bb0aebbf234db52df476a2b473d434745b34221c.zip",
-                "reference": "bb0aebbf234db52df476a2b473d434745b34221c",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.2"
-            },
-            "time": "2012-09-20 05:55:18",
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.3.x-dev"
-                }
-            },
-            "installation-source": "source",
-            "autoload": {
-                "psr-0": {
-                    "Doctrine\\Common": "lib/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Jonathan Wage",
-                    "email": "jonwage@gmail.com",
-                    "homepage": "http://www.jwage.com/"
-                },
-                {
-                    "name": "Guilherme Blanco",
-                    "email": "guilhermeblanco@gmail.com",
-                    "homepage": "http://www.instaclick.com"
-                },
-                {
-                    "name": "Roman Borschel",
-                    "email": "roman@code-factory.org"
-                },
-                {
-                    "name": "Benjamin Eberlei",
-                    "email": "kontakt@beberlei.de"
-                },
-                {
-                    "name": "Johannes Schmitt",
-                    "email": "schmittjoh@gmail.com",
-                    "homepage": "http://jmsyst.com",
-                    "role": "Developer of wrapped JMSSerializerBundle"
-                }
-            ],
-            "description": "Common Library for Doctrine projects",
-            "homepage": "http://www.doctrine-project.org",
-            "keywords": [
-                "collections",
-                "spl",
-                "eventmanager",
-                "annotations",
-                "persistence"
-            ]
-        },
-        {
-            "name": "knplabs/knp-markdown-bundle",
-            "version": "dev-master",
-            "target-dir": "Knp/Bundle/MarkdownBundle",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/KnpLabs/KnpMarkdownBundle",
-                "reference": "1a31848de5aad77b32d2b152bdce51cfbc9edcca"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://github.com/KnpLabs/KnpMarkdownBundle/archive/1a31848de5aad77b32d2b152bdce51cfbc9edcca.zip",
-                "reference": "1a31848de5aad77b32d2b152bdce51cfbc9edcca",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.3",
-                "symfony/framework-bundle": ">=2.0,<2.3-dev",
-                "dflydev/markdown": "1.0.*@dev"
-            },
-            "suggest": {
-                "symfony/twig-bundle": "to use the Twig markdown filter",
-                "ext-sundown": "to use optional support for php-sundown extension instead of php implementation"
-            },
-            "time": "2012-10-17 19:09:15",
-            "type": "symfony-bundle",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.2.x-dev"
-                }
-            },
-            "installation-source": "source",
-            "autoload": {
-                "psr-0": {
-                    "Knp\\Bundle\\MarkdownBundle": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "KnpLabs Team",
-                    "homepage": "http://knplabs.com"
-                },
-                {
-                    "name": "Symfony Community",
-                    "homepage": "http://github.com/KnpLabs/KnpMarkdownBundle/contributors"
-                }
-            ],
-            "description": "Knplabs markdown bundle transforms markdown into html",
-            "homepage": "http://github.com/KnpLabs/KnpMarkdownBundle",
-            "keywords": [
-                "markdown",
-                "knp",
-                "knplabs",
-                "bundle"
-            ]
-        },
-        {
-            "name": "mheap/silex-markdown",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/mheap/Silex-Markdown",
-                "reference": "6cfd944573c51c282518896f34f5cbd18eb834d9"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://github.com/mheap/Silex-Markdown/archive/6cfd944573c51c282518896f34f5cbd18eb834d9.zip",
-                "reference": "6cfd944573c51c282518896f34f5cbd18eb834d9",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.0",
-                "knplabs/knp-markdown-bundle": "*"
-            },
-            "require-dev": {
-                "silex/silex": "*",
-                "twig/twig": ">=1.2.0"
-            },
-            "suggest": {
-                "twig/twig": ">=1.2.0"
-            },
-            "time": "2012-08-25 00:09:46",
-            "type": "library",
-            "installation-source": "source",
-            "autoload": {
-                "psr-0": {
-                    "SilexMarkdown": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Sven Eisenschmidt",
-                    "email": "sven.eisenschmidt@gmail.com",
-                    "homepage": "http://unsicherheitsagent.de/"
-                },
-                {
-                    "name": "Michael Heap",
-                    "email": "m@michaelheap.com",
-                    "homepage": "http://michaelheap.com/"
-                }
-            ],
-            "description": "Markdown extension for Silex",
-            "homepage": "https://github.com/mheap/Silex-Markdown",
-            "keywords": [
-                "silex",
-                "markdown"
-            ]
         },
         {
             "name": "monolog/monolog",
@@ -768,12 +522,12 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/fabpot/Silex.git",
-                "reference": "c2dff3ca9e8ee4e5c9652a366c39eb3b3c91ca53"
+                "reference": "bd523d5970bb093d1d2c709e91a7f72b70c39108"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/fabpot/Silex/archive/c2dff3ca9e8ee4e5c9652a366c39eb3b3c91ca53.zip",
-                "reference": "c2dff3ca9e8ee4e5c9652a366c39eb3b3c91ca53",
+                "url": "https://github.com/fabpot/Silex/archive/bd523d5970bb093d1d2c709e91a7f72b70c39108.zip",
+                "reference": "bd523d5970bb093d1d2c709e91a7f72b70c39108",
                 "shasum": ""
             },
             "require": {
@@ -808,7 +562,7 @@
                 "symfony/css-selector": ">=2.1,<2.3-dev",
                 "symfony/dom-crawler": ">=2.1,<2.3-dev"
             },
-            "time": "2012-12-14 13:15:04",
+            "time": "2012-12-18 11:32:45",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -894,54 +648,6 @@
             "homepage": "http://symfony.com"
         },
         {
-            "name": "symfony/config",
-            "version": "dev-master",
-            "target-dir": "Symfony/Component/Config",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/Config",
-                "reference": "1df5b632feb0034736000060592a742c754ef4ec"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://github.com/symfony/Config/archive/1df5b632feb0034736000060592a742c754ef4ec.zip",
-                "reference": "1df5b632feb0034736000060592a742c754ef4ec",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.3"
-            },
-            "time": "2012-12-16 16:56:50",
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.2-dev"
-                }
-            },
-            "installation-source": "source",
-            "autoload": {
-                "psr-0": {
-                    "Symfony\\Component\\Config\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com"
-                },
-                {
-                    "name": "Symfony Community",
-                    "homepage": "http://symfony.com/contributors"
-                }
-            ],
-            "description": "Symfony Config Component",
-            "homepage": "http://symfony.com"
-        },
-        {
             "name": "symfony/console",
             "version": "2.1.x-dev",
             "target-dir": "Symfony/Component/Console",
@@ -982,62 +688,6 @@
                 }
             ],
             "description": "Symfony Console Component",
-            "homepage": "http://symfony.com"
-        },
-        {
-            "name": "symfony/dependency-injection",
-            "version": "dev-master",
-            "target-dir": "Symfony/Component/DependencyInjection",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/DependencyInjection",
-                "reference": "877d4065057d55f14c148b3801f77e2cba11bb8b"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://github.com/symfony/DependencyInjection/archive/877d4065057d55f14c148b3801f77e2cba11bb8b.zip",
-                "reference": "877d4065057d55f14c148b3801f77e2cba11bb8b",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.3"
-            },
-            "require-dev": {
-                "symfony/yaml": "2.2.*",
-                "symfony/config": "2.2.*"
-            },
-            "suggest": {
-                "symfony/yaml": "2.2.*",
-                "symfony/config": "2.2.*"
-            },
-            "time": "2012-12-16 15:11:28",
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.2-dev"
-                }
-            },
-            "installation-source": "source",
-            "autoload": {
-                "psr-0": {
-                    "Symfony\\Component\\DependencyInjection\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com"
-                },
-                {
-                    "name": "Symfony Community",
-                    "homepage": "http://symfony.com/contributors"
-                }
-            ],
-            "description": "Symfony DependencyInjection Component",
             "homepage": "http://symfony.com"
         },
         {
@@ -1145,54 +795,6 @@
             "homepage": "http://symfony.com"
         },
         {
-            "name": "symfony/filesystem",
-            "version": "dev-master",
-            "target-dir": "Symfony/Component/Filesystem",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/Filesystem",
-                "reference": "1747c69853d974a9bc87fb9a0e5b55ad2a785577"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://github.com/symfony/Filesystem/archive/1747c69853d974a9bc87fb9a0e5b55ad2a785577.zip",
-                "reference": "1747c69853d974a9bc87fb9a0e5b55ad2a785577",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.3"
-            },
-            "time": "2012-12-14 22:27:02",
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.2-dev"
-                }
-            },
-            "installation-source": "source",
-            "autoload": {
-                "psr-0": {
-                    "Symfony\\Component\\Filesystem\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com"
-                },
-                {
-                    "name": "Symfony Community",
-                    "homepage": "http://symfony.com/contributors"
-                }
-            ],
-            "description": "Symfony Filesystem Component",
-            "homepage": "http://symfony.com"
-        },
-        {
             "name": "symfony/finder",
             "version": "dev-master",
             "target-dir": "Symfony/Component/Finder",
@@ -1238,73 +840,6 @@
                 }
             ],
             "description": "Symfony Finder Component",
-            "homepage": "http://symfony.com"
-        },
-        {
-            "name": "symfony/framework-bundle",
-            "version": "dev-master",
-            "target-dir": "Symfony/Bundle/FrameworkBundle",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/FrameworkBundle",
-                "reference": "3e58b623ea59480eae3ed226c79cc418f090520b"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://github.com/symfony/FrameworkBundle/archive/3e58b623ea59480eae3ed226c79cc418f090520b.zip",
-                "reference": "3e58b623ea59480eae3ed226c79cc418f090520b",
-                "shasum": ""
-            },
-            "require": {
-                "doctrine/common": ">=2.2,<2.4-dev",
-                "php": ">=5.3.3",
-                "symfony/dependency-injection": "2.2.*",
-                "symfony/config": "2.2.*",
-                "symfony/event-dispatcher": "2.2.*",
-                "symfony/http-kernel": "2.2.*",
-                "symfony/filesystem": "2.2.*",
-                "symfony/routing": "2.2.*",
-                "symfony/templating": "2.2.*",
-                "symfony/translation": "2.2.*",
-                "symfony/stopwatch": "2.2.*"
-            },
-            "require-dev": {
-                "symfony/finder": "2.2.*"
-            },
-            "suggest": {
-                "symfony/console": "2.2.*",
-                "symfony/finder": "2.2.*",
-                "symfony/form": "2.2.*",
-                "symfony/validator": "2.2.*"
-            },
-            "time": "2012-12-16 13:02:47",
-            "type": "symfony-bundle",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.2-dev"
-                }
-            },
-            "installation-source": "source",
-            "autoload": {
-                "psr-0": {
-                    "Symfony\\Bundle\\FrameworkBundle\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com"
-                },
-                {
-                    "name": "Symfony Community",
-                    "homepage": "http://symfony.com/contributors"
-                }
-            ],
-            "description": "Symfony FrameworkBundle",
             "homepage": "http://symfony.com"
         },
         {
@@ -1535,158 +1070,6 @@
             "homepage": "http://symfony.com"
         },
         {
-            "name": "symfony/stopwatch",
-            "version": "dev-master",
-            "target-dir": "Symfony/Component/Stopwatch",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/Stopwatch",
-                "reference": "ffa5b424eaba2004e1b471c37e59258abebbc894"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://github.com/symfony/Stopwatch/archive/ffa5b424eaba2004e1b471c37e59258abebbc894.zip",
-                "reference": "ffa5b424eaba2004e1b471c37e59258abebbc894",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.3"
-            },
-            "time": "2012-12-11 10:49:22",
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.2-dev"
-                }
-            },
-            "installation-source": "source",
-            "autoload": {
-                "psr-0": {
-                    "Symfony\\Component\\Stopwatch\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com"
-                },
-                {
-                    "name": "Symfony Community",
-                    "homepage": "http://symfony.com/contributors"
-                }
-            ],
-            "description": "Symfony Stopwatch Component",
-            "homepage": "http://symfony.com"
-        },
-        {
-            "name": "symfony/templating",
-            "version": "dev-master",
-            "target-dir": "Symfony/Component/Templating",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/Templating",
-                "reference": "e93108633695ad7742b75d1bb49f1486db932044"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://github.com/symfony/Templating/archive/e93108633695ad7742b75d1bb49f1486db932044.zip",
-                "reference": "e93108633695ad7742b75d1bb49f1486db932044",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.3"
-            },
-            "time": "2012-12-11 10:49:22",
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.2-dev"
-                }
-            },
-            "installation-source": "source",
-            "autoload": {
-                "psr-0": {
-                    "Symfony\\Component\\Templating\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com"
-                },
-                {
-                    "name": "Symfony Community",
-                    "homepage": "http://symfony.com/contributors"
-                }
-            ],
-            "description": "Symfony Templating Component",
-            "homepage": "http://symfony.com"
-        },
-        {
-            "name": "symfony/translation",
-            "version": "dev-master",
-            "target-dir": "Symfony/Component/Translation",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/Translation",
-                "reference": "80dd70966521f4e1011615bc8425c4cbca1cc0db"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://github.com/symfony/Translation/archive/80dd70966521f4e1011615bc8425c4cbca1cc0db.zip",
-                "reference": "80dd70966521f4e1011615bc8425c4cbca1cc0db",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.3"
-            },
-            "require-dev": {
-                "symfony/config": "2.2.*",
-                "symfony/yaml": "2.2.*"
-            },
-            "suggest": {
-                "symfony/config": "2.2.*",
-                "symfony/yaml": "2.2.*"
-            },
-            "time": "2012-12-14 13:10:50",
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.2-dev"
-                }
-            },
-            "installation-source": "source",
-            "autoload": {
-                "psr-0": {
-                    "Symfony\\Component\\Translation\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com"
-                },
-                {
-                    "name": "Symfony Community",
-                    "homepage": "http://symfony.com/contributors"
-                }
-            ],
-            "description": "Symfony Translation Component",
-            "homepage": "http://symfony.com"
-        },
-        {
             "name": "symfony/twig-bridge",
             "version": "v2.1.4",
             "target-dir": "Symfony/Bridge/Twig",
@@ -1898,7 +1281,6 @@
         "chh/pipe-silex": 20,
         "chh/frozen-silex": 20,
         "symfony/twig-bridge": 0,
-        "symfony/yaml": 0,
-        "mheap/silex-markdown": 20
+        "symfony/yaml": 0
     }
 }
