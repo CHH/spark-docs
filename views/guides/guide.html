@@ -1,0 +1,26 @@
+{% extends "layouts/guides.html" %}
+
+{% block title %}
+{{guide.title}}
+{% endblock %}
+
+{% block content %}
+{% autoescape false %}
+<article class="guide">
+    <nav class="toc">
+    {{ guide.toc }}
+    </nav>
+
+    <div class="content">
+    {{guide.html}}
+    </div>
+</article>
+{% endautoescape %}
+{% endblock %}
+
+{% block body_end %}
+<script type="text/javascript">
+    hljs.initHighlighting();
+</script>
+{% endblock %}
+

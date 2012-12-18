@@ -1,7 +1,13 @@
+---
+excerpt: Need to make an time consuming operation, but don't want to slow down the app?  Then Spark has covered your back.
+---
+
 # Background Processing API
 
 Need to make an time consuming operation, but don't want to slow down
 the app? Then Spark has covered your back.
+
+- - -
 
 Spark features a very simple and generic API for writing background
 jobs. The main building block is the `queue` service. The `queue`
@@ -19,73 +25,69 @@ users to notice that the conversion happens.
 
 Let's create a job class for our task. A basic class can look like this:
 
-```php
-<?php
-# lib/MyApp/HelloWorldJob.php
+    <?php
+    # lib/MyApp/HelloWorldJob.php
 
-namespace MyApp;
+    namespace MyApp;
 
-class HelloWorldJob extends \Spark\Core\Job
-{
-    protected $name;
-
-    function __construct($name)
+    class HelloWorldJob extends \Spark\Core\Job
     {
-        $this->name = $name;
+        protected $name;
+
+        function __construct($name)
+        {
+            $this->name = $name;
+        }
+
+        function run()
+        {
+            # Simulate something expensive
+            sleep(20);
+
+            $this->application['logger']->info("Hello World {$this->name}!");
+        }
     }
 
-    function run()
-    {
-        # Simulate something expensive
-        sleep(20);
-
-        $this->application['logger']->info("Hello World {$this->name}!");
-    }
-}
-```
-
-You can instantiate this class like any other. Just pass all required
-paramaters to the constructor.
+You can instantiate this class like any other simple class. Just pass all required
+parameters to the constructor.
 
 You also have automatically access to the application object via the
 job's `application` property.
 
-Do this in your controller:
+To push the job into the queue, use the `queue` service and call the
+`push` method with the job object.
 
-```php
-<?php
+    <?php
 
-namespace MyApp;
+    namespace MyApp;
 
-use Symfony\Component\HttpFoundation\Request;
+    use Symfony\Component\HttpFoundation\Request;
 
-class HelloController extends ApplicationController
-{
-    function indexAction($name)
+    class HelloController extends ApplicationController
     {
-        $job = new HelloWorldJob($name);
+        function indexAction($name)
+        {
+            $job = new HelloWorldJob($name);
 
-        $this->application['queue']->push($job);
+            $this->application['queue']->push($job);
+        }
     }
-}
-```
 
 The last bit is to start the worker for background jobs. To do this,
 simply invoke `./vendor/bin/spark queue:worker` in your application
 directory.
 
-If you request your controller in your browser, with a name say "John Doe", the page renders quick,
-despite the fact that our job needs 20 seconds to run.
+If you request your controller in your browser, with a name say "John Doe", the page renders quick, despite the fact that our job needs 20 seconds to run.
 
 Then look at the console window where you run the `queue:worker`
 command. You should see "Hello World John Doe!".
 
 ## Going concurrent
 
-- - -
-Concurrent execution of jobs is only available on __*nix__ platforms,
-like Linux or OSX.
-- - -
+<div class="info-box">
+Concurrent execution of jobs is only available on platforms which are supported
+by the <a href="http://php.net/pcntl">PCNTL</a> extension, like Linux, BSD or OSX.
+</div>
 
 One thing you may have noticed is, that the worker only processes one
 job at a time. 
@@ -132,54 +134,54 @@ specifies three methods:
 To override the queue implementation, set the `queue` service in your
 `config/application.php`:
 
-```php
-$app['queue'] = $app->share(function() use ($app) {
-    return new MyRedisQueue($app['redis']);
-});
-```
+    $app['queue'] = $app->share(function() use ($app) {
+        return new MyRedisQueue($app['redis']);
+    });
 
 A simple queue, which uses Redis as storage for jobs, could look like
-this (but see [Kue\\RedisQueue][] if you need this for real):
+this (but see [Kue\\RedisQueue][redis_queue] if you need this for
+production environments):
 
-[Kue\\RedisQueue]: https://github.com/CHH/kue/tree/master/lib/Kue/RedisQueue.php
+[redis_queue]: https://github.com/CHH/kue/tree/master/lib/Kue/RedisQueue.php
 
-```php
-<?php
+    <?php
 
-use Kue\Job;
-use Kue\Queue;
+    use Kue\Job;
+    use Kue\Queue;
 
-class MyRedisQueue implements Queue
-{
-    const QUEUE_KEY = "spark:queue";
-
-    protected $redis;
-
-    function __construct(\Redis $redis)
+    class MyRedisQueue implements Queue
     {
-        $this->redis = $redis;
-    }
+        const DEFAULT_QUEUE = "spark:queue";
 
-    function pop()
-    {
-        $response = $this->redis->blPop(self::QUEUE_KEY, 10);
+        protected $redis;
+        protected $queue;
 
-        if ($response) {
-            list($list, $serializedJob) = $response;
+        function __construct(\Redis $redis, $queue = static::DEFAULT_QUEUE)
+        {
+            $this->redis = $redis;
+            $this->queue = $queue;
+        }
 
-            $job = unserialize($serializedJob);
-            return $job;
+        function pop()
+        {
+            $response = $this->redis->blPop($this->queue, 10);
+
+            if ($response) {
+                list($list, $serializedJob) = $response;
+
+                $job = unserialize($serializedJob);
+                return $job;
+            }
+        }
+
+        function push(Job $job)
+        {
+            $this->redis->rPush($this->queue, serialize($job));
+        }
+
+        function flush()
+        {
+            # We send jobs directly in `push`, so we don't need to flush
         }
     }
 
-    function push(Job $job)
-    {
-        $this->redis->rPush(self::QUEUE_KEY, serialize($job));
-    }
-
-    function flush()
-    {
-        # We send jobs directly in `push`, so we don't need to flush
-    }
-}
-```

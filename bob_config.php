@@ -2,10 +2,45 @@
 
 namespace Bob\BuildConfig;
 
+use FrozenSilex\Freezer;
+use Pipe\AssetDumper;
+
 directoryTask('_site');
 directoryTask('_build');
 
 define('SOURCE_DIR', sys_get_temp_dir() . '/spark-framework');
+define('SITE_BASE_PATH', '/spark');
+
+directoryTask('_site/assets');
+
+desc('Freezes the Silex App in "app.php" to static HTML');
+task('site', ['_site', '_site/assets'], function() {
+    $assets = new \Pipe\Environment();
+    $assets->appendPath('assets');
+
+    $app = require(__DIR__ . '/app.php');
+
+    $app['pipe.css_compressor'] = 'yuglify_css';
+    $app['pipe.use_precompiled'] = true;
+    $app['pipe.manifest'] = '_site/assets/manifest.json';
+    $app['pipe.prefix'] = SITE_BASE_PATH . '/assets';
+
+    $app['pipe']->precompile();
+
+    $app['freezer.destination'] = '_site';
+
+    $app->before(function() use ($app) {
+        $app['request_context']->setBaseUrl(SITE_BASE_PATH);
+    });
+
+    $freezer = new Freezer($app);
+    $freezer->freeze();
+});
+
+task('site:server', function() {
+    info('Started development server on localhost:3000');
+    sh('php -S localhost:3000 -t ./ router.php');
+});
 
 task('checkout_source', function() {
     if (is_dir(SOURCE_DIR)) {
@@ -14,9 +49,11 @@ task('checkout_source', function() {
         });
     } else {
         sh("git clone git@github.com:CHH/spark " . SOURCE_DIR);
+    }
 
+    if (!is_dir(SOURCE_DIR . '/composer.phar')) {
         $in = fopen('http://getcomposer.org/composer.phar', 'rb');
-        $out = fopen("$temp/composer.phar", "w+");
+        $out = fopen(SOURCE_DIR . "/composer.phar", "w+");
         stream_copy_to_stream($in, $out);
     }
 
@@ -34,7 +71,7 @@ task('dist', ['checkout_source'], function() {
 });
 
 desc('Builds Spark\'s Homepage on Github.com');
-task('gh-pages', ['docs', 'dist'], function() {
+task('gh-pages', ['docs', 'dist', 'site'], function() {
     $temp = 'spark_ghpages_clone_' . uniqid();
     $site = realpath('_site');
 

@@ -1,0 +1,15 @@
+{% extends "layouts/guides.html" %}
+
+{% block content %}
+<section id="guides">
+{% for guide in index %}
+    <article>
+        <h2><a href="{{ path('guide_show', {'guide':guide.name}) }}">{{ guide.title }}</a></h2>
+        <p>
+            {{ guide.excerpt }}
+        </p>
+    </article>
+{% endfor %}
+</section>
+{% endblock %}
+

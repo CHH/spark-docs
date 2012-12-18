@@ -1,0 +1,12 @@
+{
+    "require": {
+        "twig/twig": "1.*@stable",
+        "chh/bob": "*@dev",
+        "chh/pipe-silex": "*@dev",
+        "chh/frozen-silex": "*@dev",
+        "symfony/twig-bridge": "2.1.*@stable",
+        "symfony/yaml": "2.1.*@stable",
+        "ext-sundown": "*"
+    },
+    "minimum-stability": "dev"
+}

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            {% block title %}{% endblock %}
+        </title>
+
+        {{ pipe_link_tag('screen.less') }}
+
+        <link rel="stylesheet" href="http://yandex.st/highlightjs/7.3/styles/solarized_light.min.css">
+        <script src="http://yandex.st/highlightjs/7.3/highlight.min.js"></script>
+
+        <script src="http://use.edgefonts.net/open-sans.js"></script>
+    </head>
+    <body>
+        <header role="banner">
+            {% block pagetitle %}
+            <h1><a href="{{ path('homepage') }}">Spark Framework</a></h1>
+            {% endblock %}
+        </header>
+
+        {% block content %}{% endblock %}
+
+        {% block body_end %}
+        {% endblock %}
+    </body>
+</html>
+
