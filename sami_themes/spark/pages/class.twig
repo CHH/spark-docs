@@ -1,0 +1,37 @@
+{% extends 'default/pages/class.twig' %}
+
+{% block content %}
+    <p>{{ block('class_signature') }}</p>
+
+    {% if class.shortdesc or class.longdesc %}
+        <div class="shortdesc">
+            <p>{{ class.shortdesc|desc(class)|nl2br }}</p>
+        </div>
+
+        <div class="longdesc">
+            {{ class.longdesc|desc(class)|markdown }}</p>
+        </div>
+    {% endif %}
+
+    {% if constants %}
+        <h2>Constants</h2>
+
+        {{ block('constants') }}
+    {% endif %}
+
+    {% if properties %}
+        <h2>Properties</h2>
+
+        {{ block('properties') }}
+    {% endif %}
+
+    {% if methods %}
+        <h2>Methods</h2>
+
+        {{ block('methods') }}
+
+        <h2>Details</h2>
+
+        {{ block('methods_details') }}
+    {% endif %}
+{% endblock %}

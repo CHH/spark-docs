@@ -1,29 +1,71 @@
 {
-    "hash": "240c9859899992744f643ae7306e5b56",
+    "hash": "9131e555adf860d7da5ce072996f7376",
     "packages": [
+        {
+            "name": "aptoma/twig-markdown",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/aptoma/twig-markdown",
+                "reference": "c687c119174ebc3697171d2a45b22aa779c2ce87"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/aptoma/twig-markdown/archive/c687c119174ebc3697171d2a45b22aa779c2ce87.zip",
+                "reference": "c687c119174ebc3697171d2a45b22aa779c2ce87",
+                "shasum": ""
+            },
+            "require": {
+                "twig/twig": ">=1.0,<2.0",
+                "dflydev/markdown": ">=1.0,<2.0"
+            },
+            "time": "2012-11-18 19:31:21",
+            "type": "library",
+            "installation-source": "source",
+            "autoload": {
+                "psr-0": {
+                    "Aptoma": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Gunnar Lium",
+                    "email": "gunnar@aptoma.com"
+                }
+            ],
+            "description": "Twig extension to work with Markdown content",
+            "keywords": [
+                "twig",
+                "markdown"
+            ]
+        },
         {
             "name": "chh/bob",
             "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "git://github.com/CHH/bob.git",
-                "reference": "ffd4d3d76336b76b414f4e5ac75f3e5c417fa986"
+                "reference": "fa2b92dc9a3ce8a75e69d5375039909c50c90866"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/CHH/bob/archive/ffd4d3d76336b76b414f4e5ac75f3e5c417fa986.zip",
-                "reference": "ffd4d3d76336b76b414f4e5ac75f3e5c417fa986",
+                "url": "https://github.com/CHH/bob/archive/fa2b92dc9a3ce8a75e69d5375039909c50c90866.zip",
+                "reference": "fa2b92dc9a3ce8a75e69d5375039909c50c90866",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3",
-                "symfony/finder": "2.*@stable",
-                "symfony/process": "2.*@stable",
                 "chh/fileutils": "*@dev",
                 "monolog/monolog": "*@dev",
-                "chh/optparse": "*@dev"
+                "chh/optparse": "*@dev",
+                "symfony/finder": "2.*",
+                "symfony/process": "2.*"
             },
-            "time": "2012-11-26 20:32:52",
+            "time": "2013-01-05 09:24:22",
             "bin": [
                 "bin/bob"
             ],
@@ -240,18 +282,18 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/CHH/optparse",
-                "reference": "3abf522b87b4952ce4afb6e1eed217fa22295f1b"
+                "reference": "83bc89f295e8f9fd40a19fecbcd133dab6c0b3d7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/CHH/optparse/archive/3abf522b87b4952ce4afb6e1eed217fa22295f1b.zip",
-                "reference": "3abf522b87b4952ce4afb6e1eed217fa22295f1b",
+                "url": "https://github.com/CHH/optparse/archive/83bc89f295e8f9fd40a19fecbcd133dab6c0b3d7.zip",
+                "reference": "83bc89f295e8f9fd40a19fecbcd133dab6c0b3d7",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3"
             },
-            "time": "2012-08-29 00:25:43",
+            "time": "2012-12-19 18:13:05",
             "type": "library",
             "installation-source": "source",
             "autoload": {
@@ -281,12 +323,12 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/CHH/pipe.git",
-                "reference": "6bbafb9823fd69b9e8401c4623c15f573d84167a"
+                "reference": "feab03e9c1095de9108fc80b2fdeb922cda18829"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/CHH/pipe/archive/6bbafb9823fd69b9e8401c4623c15f573d84167a.zip",
-                "reference": "6bbafb9823fd69b9e8401c4623c15f573d84167a",
+                "url": "https://github.com/CHH/pipe/archive/feab03e9c1095de9108fc80b2fdeb922cda18829.zip",
+                "reference": "feab03e9c1095de9108fc80b2fdeb922cda18829",
                 "shasum": ""
             },
             "require": {
@@ -300,14 +342,16 @@
             "require-dev": {
                 "react/http": "*@dev",
                 "symfony/http-foundation": "*@stable",
-                "imagine/imagine": "*@dev"
+                "imagine/imagine": "*@dev",
+                "mikey179/vfsstream": "1.1.*@stable",
+                "chh/bob": "*@dev"
             },
             "suggest": {
                 "react/http": "Enable the standalone asset server",
                 "symfony/http-foundation": "Enable dynamic asset serving with Pipe\\Server",
                 "imagine/imagine": "Enable image compressors"
             },
-            "time": "2012-12-17 18:20:13",
+            "time": "2013-01-05 09:33:06",
             "bin": [
                 "bin/pipe",
                 "bin/pipe-server",
@@ -343,12 +387,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/CHH/pipe-silex",
-                "reference": "fbe6c6aa2da3d150ae90b3f2850d67641ed7faad"
+                "reference": "v0.1.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/CHH/pipe-silex/archive/fbe6c6aa2da3d150ae90b3f2850d67641ed7faad.zip",
-                "reference": "fbe6c6aa2da3d150ae90b3f2850d67641ed7faad",
+                "url": "https://github.com/CHH/pipe-silex/archive/v0.1.0.zip",
+                "reference": "v0.1.0",
                 "shasum": ""
             },
             "require": {
@@ -359,7 +403,7 @@
                 "silex/silex": "*@dev",
                 "twig/twig": "*@stable"
             },
-            "time": "2012-12-17 18:21:32",
+            "time": "2012-12-28 14:02:41",
             "type": "library",
             "installation-source": "source",
             "autoload": {
@@ -390,18 +434,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/CHH/shellwords.git",
-                "reference": "b33a3e72ef4286855a7e612389018876d989ddd4"
+                "reference": "8cd0e82d36ca71ae6f43466412c611249f71288c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/CHH/shellwords/archive/b33a3e72ef4286855a7e612389018876d989ddd4.zip",
-                "reference": "b33a3e72ef4286855a7e612389018876d989ddd4",
+                "url": "https://github.com/CHH/shellwords/archive/8cd0e82d36ca71ae6f43466412c611249f71288c.zip",
+                "reference": "8cd0e82d36ca71ae6f43466412c611249f71288c",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3"
             },
-            "time": "2012-05-16 06:08:08",
+            "time": "2012-12-28 15:47:39",
             "type": "library",
             "installation-source": "source",
             "autoload": {
@@ -410,7 +454,70 @@
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
             "description": "Lame port of Ruby's Shellwords.rb"
+        },
+        {
+            "name": "dflydev/markdown",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dflydev/dflydev-markdown.git",
+                "reference": "11f8faa2d17f717a038b4d372abd22a6ac4a15dc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/dflydev/dflydev-markdown/archive/11f8faa2d17f717a038b4d372abd22a6ac4a15dc.zip",
+                "reference": "11f8faa2d17f717a038b4d372abd22a6ac4a15dc",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3"
+            },
+            "time": "2012-07-15 16:31:27",
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "installation-source": "source",
+            "autoload": {
+                "psr-0": {
+                    "dflydev\\markdown": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Dragonfly Development Inc.",
+                    "email": "info@dflydev.com",
+                    "homepage": "http://dflydev.com"
+                },
+                {
+                    "name": "Beau Simensen",
+                    "email": "beau@dflydev.com",
+                    "homepage": "http://beausimensen.com"
+                },
+                {
+                    "name": "Michel Fortin",
+                    "homepage": "http://michelf.com"
+                },
+                {
+                    "name": "John Gruber",
+                    "homepage": "http://daringfireball.net"
+                }
+            ],
+            "description": "PHP Markdown & Extra",
+            "homepage": "http://github.com/dflydev/dflydev-markdown",
+            "keywords": [
+                "markdown"
+            ]
         },
         {
             "name": "monolog/monolog",
@@ -418,16 +525,17 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seldaek/monolog",
-                "reference": "0df12342ef6c5efc748b27bb9ef92e1c95631058"
+                "reference": "d7375c380955372f3140fb897c1c824cdb53af2b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/Seldaek/monolog/archive/0df12342ef6c5efc748b27bb9ef92e1c95631058.zip",
-                "reference": "0df12342ef6c5efc748b27bb9ef92e1c95631058",
+                "url": "https://github.com/Seldaek/monolog/archive/d7375c380955372f3140fb897c1c824cdb53af2b.zip",
+                "reference": "d7375c380955372f3140fb897c1c824cdb53af2b",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.0"
+                "php": ">=5.3.0",
+                "psr/log": ">=1.0,<2.0"
             },
             "require-dev": {
                 "mlehner/gelf-php": "1.0.*"
@@ -437,7 +545,7 @@
                 "ext-amqp": "Allow sending log messages to an AMQP server (1.0+ required)",
                 "ext-mongo": "Allow sending log messages to a MongoDB server"
             },
-            "time": "2012-12-14 11:27:44",
+            "time": "2013-01-04 16:29:53",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -470,23 +578,63 @@
             ]
         },
         {
+            "name": "nikic/php-parser",
+            "version": "v0.9.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nikic/PHP-Parser",
+                "reference": "v0.9.3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/nikic/PHP-Parser/archive/v0.9.3.zip",
+                "reference": "v0.9.3",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.2"
+            },
+            "time": "2012-11-22 18:54:05",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-0": {
+                    "PHPParser": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Nikita Popov"
+                }
+            ],
+            "description": "A PHP parser written in PHP",
+            "keywords": [
+                "php",
+                "parser"
+            ]
+        },
+        {
             "name": "pimple/pimple",
             "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "git://github.com/fabpot/Pimple.git",
-                "reference": "v1.0.1"
+                "reference": "f145dc796b76635e5419354e6d7dce4d6c8cd04d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/fabpot/Pimple/archive/v1.0.1.zip",
-                "reference": "v1.0.1",
+                "url": "https://github.com/fabpot/Pimple/archive/f145dc796b76635e5419354e6d7dce4d6c8cd04d.zip",
+                "reference": "f145dc796b76635e5419354e6d7dce4d6c8cd04d",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.0"
             },
-            "time": "2012-11-11 08:32:34",
+            "time": "2013-01-04 16:53:43",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -517,17 +665,108 @@
             ]
         },
         {
+            "name": "psr/log",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-fig/log",
+                "reference": "1.0.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/php-fig/log/archive/1.0.0.zip",
+                "reference": "1.0.0",
+                "shasum": ""
+            },
+            "time": "2012-12-21 11:40:51",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-0": {
+                    "Psr\\Log\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PHP-FIG",
+                    "homepage": "http://www.php-fig.org/"
+                }
+            ],
+            "description": "Common interface for logging libraries",
+            "keywords": [
+                "log",
+                "psr",
+                "psr-3"
+            ]
+        },
+        {
+            "name": "sami/sami",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/fabpot/Sami",
+                "reference": "142fe5e3fa1f7a517019ebb7ff976f26adfe578a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/fabpot/Sami/archive/142fe5e3fa1f7a517019ebb7ff976f26adfe578a.zip",
+                "reference": "142fe5e3fa1f7a517019ebb7ff976f26adfe578a",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0",
+                "pimple/pimple": "1.0.*",
+                "twig/twig": "1.*",
+                "nikic/php-parser": "0.9.*",
+                "symfony/console": ">=2.1,<3.0-dev",
+                "symfony/finder": ">=2.1,<3.0-dev",
+                "symfony/filesystem": ">=2.1,<3.0-dev",
+                "symfony/yaml": ">=2.1,<3.0-dev",
+                "symfony/process": ">=2.1,<3.0-dev"
+            },
+            "time": "2013-01-04 16:54:17",
+            "bin": [
+                "sami.php"
+            ],
+            "type": "application",
+            "installation-source": "source",
+            "autoload": {
+                "psr-0": {
+                    "Sami": "."
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                }
+            ],
+            "description": "Sami, an API documentation generator",
+            "homepage": "http://sami.sensiolabs.org",
+            "keywords": [
+                "phpdoc"
+            ]
+        },
+        {
             "name": "silex/silex",
             "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "git://github.com/fabpot/Silex.git",
-                "reference": "bd523d5970bb093d1d2c709e91a7f72b70c39108"
+                "reference": "7df600f14887b0342f2d4a90debd6c8e6b44ef7b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/fabpot/Silex/archive/bd523d5970bb093d1d2c709e91a7f72b70c39108.zip",
-                "reference": "bd523d5970bb093d1d2c709e91a7f72b70c39108",
+                "url": "https://github.com/fabpot/Silex/archive/7df600f14887b0342f2d4a90debd6c8e6b44ef7b.zip",
+                "reference": "7df600f14887b0342f2d4a90debd6c8e6b44ef7b",
                 "shasum": ""
             },
             "require": {
@@ -562,7 +801,7 @@
                 "symfony/css-selector": ">=2.1,<2.3-dev",
                 "symfony/dom-crawler": ">=2.1,<2.3-dev"
             },
-            "time": "2012-12-18 11:32:45",
+            "time": "2013-01-04 16:54:30",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -603,12 +842,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/BrowserKit",
-                "reference": "2f09aa1427dc5af5a3da4fe6a79830be9ff1328e"
+                "reference": "e9ca660d8d95010133db6083c135e0e6a6988353"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/symfony/BrowserKit/archive/2f09aa1427dc5af5a3da4fe6a79830be9ff1328e.zip",
-                "reference": "2f09aa1427dc5af5a3da4fe6a79830be9ff1328e",
+                "url": "https://github.com/symfony/BrowserKit/archive/e9ca660d8d95010133db6083c135e0e6a6988353.zip",
+                "reference": "e9ca660d8d95010133db6083c135e0e6a6988353",
                 "shasum": ""
             },
             "require": {
@@ -622,7 +861,7 @@
             "suggest": {
                 "symfony/process": "2.1.*"
             },
-            "time": "2012-12-06 10:00:55",
+            "time": "2013-01-04 17:00:54",
             "type": "library",
             "installation-source": "source",
             "autoload": {
@@ -654,18 +893,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Console",
-                "reference": "e27fb799dada52e80c4f18550eca8e45fbe55f0c"
+                "reference": "4407d7d993987fd2d923361bdbd2472dd5440b2c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/symfony/Console/archive/e27fb799dada52e80c4f18550eca8e45fbe55f0c.zip",
-                "reference": "e27fb799dada52e80c4f18550eca8e45fbe55f0c",
+                "url": "https://github.com/symfony/Console/archive/4407d7d993987fd2d923361bdbd2472dd5440b2c.zip",
+                "reference": "4407d7d993987fd2d923361bdbd2472dd5440b2c",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3"
             },
-            "time": "2012-12-13 17:42:00",
+            "time": "2013-01-04 17:00:54",
             "type": "library",
             "installation-source": "source",
             "autoload": {
@@ -697,12 +936,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/DomCrawler",
-                "reference": "96ee94d706f898a3a1009dd818e844554caa368f"
+                "reference": "6c916656100538aa380ef9b099ea1234ecae29f1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/symfony/DomCrawler/archive/96ee94d706f898a3a1009dd818e844554caa368f.zip",
-                "reference": "96ee94d706f898a3a1009dd818e844554caa368f",
+                "url": "https://github.com/symfony/DomCrawler/archive/6c916656100538aa380ef9b099ea1234ecae29f1.zip",
+                "reference": "6c916656100538aa380ef9b099ea1234ecae29f1",
                 "shasum": ""
             },
             "require": {
@@ -714,7 +953,7 @@
             "suggest": {
                 "symfony/css-selector": "2.1.*"
             },
-            "time": "2012-12-06 10:00:55",
+            "time": "2013-01-04 17:00:54",
             "type": "library",
             "installation-source": "source",
             "autoload": {
@@ -746,12 +985,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/EventDispatcher",
-                "reference": "eb290a447c0af5bea0d3de5d95d498afd8c82f89"
+                "reference": "0fcc9fa82fa3ea7ec2605af2e8137698fbaca3dc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/symfony/EventDispatcher/archive/eb290a447c0af5bea0d3de5d95d498afd8c82f89.zip",
-                "reference": "eb290a447c0af5bea0d3de5d95d498afd8c82f89",
+                "url": "https://github.com/symfony/EventDispatcher/archive/0fcc9fa82fa3ea7ec2605af2e8137698fbaca3dc.zip",
+                "reference": "0fcc9fa82fa3ea7ec2605af2e8137698fbaca3dc",
                 "shasum": ""
             },
             "require": {
@@ -764,7 +1003,7 @@
                 "symfony/dependency-injection": "2.2.*",
                 "symfony/http-kernel": "2.2.*"
             },
-            "time": "2012-11-13 14:08:04",
+            "time": "2013-01-04 17:02:19",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -795,24 +1034,72 @@
             "homepage": "http://symfony.com"
         },
         {
+            "name": "symfony/filesystem",
+            "version": "dev-master",
+            "target-dir": "Symfony/Component/Filesystem",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/Filesystem",
+                "reference": "80a7acb777ab48901883736fde396df8ad46fcde"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/symfony/Filesystem/archive/80a7acb777ab48901883736fde396df8ad46fcde.zip",
+                "reference": "80a7acb777ab48901883736fde396df8ad46fcde",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "time": "2013-01-04 16:58:00",
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.2-dev"
+                }
+            },
+            "installation-source": "source",
+            "autoload": {
+                "psr-0": {
+                    "Symfony\\Component\\Filesystem\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "http://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony Filesystem Component",
+            "homepage": "http://symfony.com"
+        },
+        {
             "name": "symfony/finder",
             "version": "dev-master",
             "target-dir": "Symfony/Component/Finder",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Finder",
-                "reference": "12aa1bbd5fe80a813323967df10e33a3e57ca9ac"
+                "reference": "f6def71f171a9c897d4abcbb653919f9bd01dc9d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/symfony/Finder/archive/12aa1bbd5fe80a813323967df10e33a3e57ca9ac.zip",
-                "reference": "12aa1bbd5fe80a813323967df10e33a3e57ca9ac",
+                "url": "https://github.com/symfony/Finder/archive/f6def71f171a9c897d4abcbb653919f9bd01dc9d.zip",
+                "reference": "f6def71f171a9c897d4abcbb653919f9bd01dc9d",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3"
             },
-            "time": "2012-12-14 22:27:02",
+            "time": "2013-01-04 16:58:00",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -849,18 +1136,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/HttpFoundation",
-                "reference": "a18fd6c453fd9b3b4d6c78dd37e78268539474a0"
+                "reference": "5aa0119417f1fc8de7513d9432dd2f43f9d9e97b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/symfony/HttpFoundation/archive/a18fd6c453fd9b3b4d6c78dd37e78268539474a0.zip",
-                "reference": "a18fd6c453fd9b3b4d6c78dd37e78268539474a0",
+                "url": "https://github.com/symfony/HttpFoundation/archive/5aa0119417f1fc8de7513d9432dd2f43f9d9e97b.zip",
+                "reference": "5aa0119417f1fc8de7513d9432dd2f43f9d9e97b",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3"
             },
-            "time": "2012-12-15 16:49:38",
+            "time": "2013-01-04 17:02:19",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -900,12 +1187,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/HttpKernel",
-                "reference": "533decf24f6b7aebef5c450b037c524b658f593f"
+                "reference": "ce164c088666b80ffc116173065d504055414137"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/symfony/HttpKernel/archive/533decf24f6b7aebef5c450b037c524b658f593f.zip",
-                "reference": "533decf24f6b7aebef5c450b037c524b658f593f",
+                "url": "https://github.com/symfony/HttpKernel/archive/ce164c088666b80ffc116173065d504055414137.zip",
+                "reference": "ce164c088666b80ffc116173065d504055414137",
                 "shasum": ""
             },
             "require": {
@@ -932,7 +1219,7 @@
                 "symfony/dependency-injection": "2.2.*",
                 "symfony/finder": "2.2.*"
             },
-            "time": "2012-12-16 08:41:40",
+            "time": "2013-01-04 16:58:00",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -969,18 +1256,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Process",
-                "reference": "30993c352e5b471404b481b87df8d803fd35c0f5"
+                "reference": "a54810f5ff336e8a3c153e6f490c63403b9d1792"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/symfony/Process/archive/30993c352e5b471404b481b87df8d803fd35c0f5.zip",
-                "reference": "30993c352e5b471404b481b87df8d803fd35c0f5",
+                "url": "https://github.com/symfony/Process/archive/a54810f5ff336e8a3c153e6f490c63403b9d1792.zip",
+                "reference": "a54810f5ff336e8a3c153e6f490c63403b9d1792",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3"
             },
-            "time": "2012-12-14 22:27:02",
+            "time": "2013-01-04 17:02:19",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -1017,12 +1304,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Routing",
-                "reference": "c259a67cf029b106048c91cd74a7a1284c321e65"
+                "reference": "87a66890450658ccac99702ac5e4f002ece9e23e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/symfony/Routing/archive/c259a67cf029b106048c91cd74a7a1284c321e65.zip",
-                "reference": "c259a67cf029b106048c91cd74a7a1284c321e65",
+                "url": "https://github.com/symfony/Routing/archive/87a66890450658ccac99702ac5e4f002ece9e23e.zip",
+                "reference": "87a66890450658ccac99702ac5e4f002ece9e23e",
                 "shasum": ""
             },
             "require": {
@@ -1039,7 +1326,7 @@
                 "symfony/config": "2.2.*",
                 "symfony/yaml": "2.2.*"
             },
-            "time": "2012-12-14 22:50:21",
+            "time": "2012-12-28 13:21:48",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -1071,17 +1358,17 @@
         },
         {
             "name": "symfony/twig-bridge",
-            "version": "v2.1.4",
+            "version": "v2.1.6",
             "target-dir": "Symfony/Bridge/Twig",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/TwigBridge",
-                "reference": "v2.1.4"
+                "reference": "v2.1.6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/symfony/TwigBridge/archive/v2.1.4.zip",
-                "reference": "v2.1.4",
+                "url": "https://github.com/symfony/TwigBridge/archive/v2.1.6.zip",
+                "reference": "v2.1.6",
                 "shasum": ""
             },
             "require": {
@@ -1104,13 +1391,8 @@
                 "symfony/yaml": "2.1.*",
                 "symfony/security": "2.1.*"
             },
-            "time": "2012-11-08 09:51:48",
+            "time": "2012-12-06 10:00:55",
             "type": "symfony-bridge",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.1-dev"
-                }
-            },
             "installation-source": "dist",
             "autoload": {
                 "psr-0": {
@@ -1136,29 +1418,24 @@
         },
         {
             "name": "symfony/yaml",
-            "version": "v2.1.4",
+            "version": "v2.1.6",
             "target-dir": "Symfony/Component/Yaml",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Yaml",
-                "reference": "v2.1.4"
+                "reference": "v2.1.6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/symfony/Yaml/archive/v2.1.4.zip",
-                "reference": "v2.1.4",
+                "url": "https://github.com/symfony/Yaml/archive/v2.1.6.zip",
+                "reference": "v2.1.6",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3"
             },
-            "time": "2012-11-08 09:51:48",
+            "time": "2012-12-06 10:00:55",
             "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.1-dev"
-                }
-            },
             "installation-source": "source",
             "autoload": {
                 "psr-0": {

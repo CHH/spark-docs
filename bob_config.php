@@ -39,11 +39,13 @@ task('site:server', function() {
 });
 
 task('checkout_source', function() {
-    if (is_dir(SOURCE_DIR)) {
+    if (is_dir(SOURCE_DIR . '/.git')) {
         cd(SOURCE_DIR, function() {
             sh('git pull --ff origin master');
         });
     } else {
+        if (is_dir(SOURCE_DIR)) sh(['rm', '-rf', SOURCE_DIR]);
+
         sh("git clone git@github.com:CHH/spark " . SOURCE_DIR);
     }
 
@@ -86,6 +88,6 @@ task('gh-pages', ['docs', 'dist', 'site'], function() {
 
 desc('Builds the documentation');
 task('docs', ['checkout_source', '_site'], function() {
-    php([SOURCE_DIR . "/vendor/bin/sami.php", 'update', 'sami_config.php', '-v']);
+    php(["vendor/bin/sami.php", 'update', 'sami_config.php', '-v']);
 });
 
