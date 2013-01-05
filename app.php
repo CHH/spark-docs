@@ -109,7 +109,7 @@ $app->get('/guides/{guide}', function($guide) use ($app) {
 
 # Fallback route to serve static pages
 $app->get('/{page}', function($page) use ($app) {
-    $app['twig']->render($page);
+    return $app['twig']->render($page);
 })->assert('page', '.+')->bind('page_show');
 
 return $app;
