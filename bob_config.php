@@ -7,7 +7,7 @@ use FrozenSilex\Freezer;
 directoryTask('_site');
 directoryTask('_build');
 
-define('SOURCE_DIR', sys_get_temp_dir() . '/spark-framework');
+define('SOURCE_DIR', '_build/spark-framework');
 define('SITE_BASE_PATH', '/spark');
 
 directoryTask('_site/assets');
@@ -88,6 +88,6 @@ task('gh-pages', ['docs', 'dist', 'site'], function() {
 
 desc('Builds the documentation');
 task('docs', ['checkout_source', '_site'], function() {
-    php(["vendor/bin/sami.php", 'update', 'sami_config.php', '-v']);
+    php([SOURCE_DIR . "/vendor/bin/sami.php", 'update', '--force', __DIR__ . '/sami_config.php']);
 });
 

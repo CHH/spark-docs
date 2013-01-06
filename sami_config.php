@@ -20,7 +20,7 @@ $config = new Sami($iterator, [
 $config['template_dirs'] = [__DIR__ . '/sami_themes'];
 
 $config['twig'] = $config->share($config->extend('twig', function($twig) {
-    $md = new \dflydev\markdown\MarkdownParser;
+    $md = new \dflydev\markdown\MarkdownExtraParser;
     $twig->addExtension(new \Aptoma\Twig\Extension\MarkdownExtension($md));
 
     return $twig;

@@ -8,7 +8,6 @@
         "symfony/yaml": "2.1.*@stable",
         "ext-sundown": "*",
         "silex/silex": "*",
-        "aptoma/twig-markdown": "*",
         "sami/sami": "*"
     },
     "minimum-stability": "dev"

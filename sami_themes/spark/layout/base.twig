@@ -1,0 +1,12 @@
+{% extends 'default/layout/base.twig' %}
+
+{% block head %}
+{{ parent() }}
+<link rel="stylesheet" type="text/css" href="{{ path('spark.css') }}">
+<link rel="stylesheet" href="http://yandex.st/highlightjs/7.3/styles/github.min.css">
+<script src="http://yandex.st/highlightjs/7.3/highlight.min.js"></script>
+
+<script type="text/javascript">
+    hljs.initHighlightingOnLoad();
+</script>
+{% endblock %}
