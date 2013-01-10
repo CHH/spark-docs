@@ -40,20 +40,27 @@ task('site:server', function() {
 
 task('checkout_source', function() {
     if (is_dir(SOURCE_DIR . '/.git')) {
+        info('----> Updating source...');
+
         cd(SOURCE_DIR, function() {
             sh('git pull --ff origin master');
         });
     } else {
+        info('----> Checking out source...');
         if (is_dir(SOURCE_DIR)) sh(['rm', '-rf', SOURCE_DIR]);
 
         sh("git clone git@github.com:CHH/spark " . SOURCE_DIR);
     }
+
+    info('----> Downloading Composer...');
 
     if (!is_dir(SOURCE_DIR . '/composer.phar')) {
         $in = fopen('http://getcomposer.org/composer.phar', 'rb');
         $out = fopen(SOURCE_DIR . "/composer.phar", "w+");
         stream_copy_to_stream($in, $out);
     }
+
+    info('----> Updating Dependencies...');
 
     cd(SOURCE_DIR, function() {
         php("composer.phar self-update");
@@ -62,21 +69,29 @@ task('checkout_source', function() {
 });
 
 task('dist', ['checkout_source'], function() {
+    info('----> Building spark.phar');
+
     cd(SOURCE_DIR, function() {
-        sh('bob deps dist', ['fail_on_error' => true]);
+        sh('vendor/bin/bob deps dist', ['fail_on_error' => true]);
         copy('spark.phar', __DIR__ . '/_site/spark.phar');
     });
+
+    info('----> Done');
 });
 
 desc('Builds Spark\'s Homepage on Github.com');
 task('gh-pages', ['docs', 'dist', 'site'], function() {
-    $temp = 'spark_ghpages_clone_' . uniqid();
+    if (is_dir('_build/spark-gh-pages/.git')) {
+        cd('_build/spark-gh-pages', function() {
+            sh('git pull git@github.com:CHH/spark gh-pages --ff');
+        });
+    } else {
+        sh(['git', 'clone', '--branch', 'gh-pages', 'git@github.com:CHH/spark', "_build/spark-gh-pages"], ['fail_on_error' => true]);
+    }
+
     $site = realpath('_site');
 
-    cd(sys_get_temp_dir(), function() use ($site, $temp) {
-        sh(['git', 'clone', '--branch', 'gh-pages', 'git@github.com:CHH/spark', sys_get_temp_dir() . "/$temp"], ['fail_on_error' => true]);
-        chdir($temp);
-
+    cd('_build/spark-gh-pages', function() use ($site) {
         sh("rsync -avr --delete --exclude=.git $site/ .", ['fail_on_error' => true]);
 
         sh("git add -A", ['fail_on_error' => true]);
@@ -88,6 +103,8 @@ task('gh-pages', ['docs', 'dist', 'site'], function() {
 
 desc('Builds the documentation');
 task('docs', ['checkout_source', '_site'], function() {
+    info('----> Building API docs using Sami');
     php([SOURCE_DIR . "/vendor/bin/sami.php", 'update', '--force', __DIR__ . '/sami_config.php']);
+    info('----> Done');
 });
 
