@@ -1,105 +1,32 @@
-/* ============================================================
+/*
+ *= require normalize-css/normalize.css
+ */
 
-320 and Up by Andy Clarke
-Version: 3.0
-URL: http://stuffandnonsense.co.uk/projects/320andup/
-Apache License: v2.0. http://www.apache.org/licenses/LICENSE-2.0
-
-============================================================ */
-
-// 1. ROOT 					==============================
-
-// CSS reset
-@import "reset.less";
-
-// Variables and mixins
-@import "variables.less";
-@import "mixins.less";
-
-// Site wide styles (html, body)
-@import "site.less";
-
-// 2. TYPOGRAPHY 			==============================
-
-// Block level (h1, p) and text-level (em, strong) type
-@import "typography.less";
-
-// 3. COLOUR 				==============================
-
-// Colour interaction semantics
-@import "colour.less";
-
-// 4. TEXTURE 				==============================
-
-// Alerts, badges, boxes and gradients
-@import "texture.less";
-
-// Font Awesome icon fonts (optional)
-@import "font-awesome.less";
-
-// 5. ELEMENTS 				==============================
-
-// Figures, images and other elements
-@import "elements.less";
-
-// Standard form controls
-@import "forms.less";
-
-// Button styles (optional)
-@import "buttons.less";
-
-// Tables
-@import "tables.less";
-
-// 6. LAYOUT 			==============================
-
-// Page level layout styles (banner, navigation, content, contentinfo)
-@import "page.less";
-
-// Styles for individual page sections
-@import "sections/guide.less";
-
-//  7. VENDOR-SPECIFIC 		==============================
-//  8. MODERNIZR 			==============================
-
-// @import "modernizr.less";
-
-//  9. TEMPLATE SPECIFICS 	==============================
-//  10. MEDIA QUERIES 		==============================
-
-@media print {
-@import "print.less";
+body {
+    width: 960px;
+    margin: 0 auto;
+    font-family: "Open Sans";
 }
 
-// 480px
-@media only screen and (min-width: 480px) {
-@import "480.less";
+hr {
+    border: none;
+    border-bottom: 1px solid #ccc;
 }
 
-// 600px
-@media only screen and (min-width: 600px) {
-@import "600.less";
+code {
+    font-family: Menlo, Consolas, "Droid Sans Mono";
 }
 
-// 768px
-@media only screen and (min-width: 768px) {
-@import "768.less";
+pre {
+    margin-left: 2em;
 }
 
-// 992px
-@media only screen and (min-width: 992px) {
-@import "992.less";
+h1 {
+    font-size: 3em;
+    font-weight: 100;
 }
 
-// 1382px
-@media only screen and (min-width: 1382px) {
-@import "1382.less";
+h2 {
+    font-size: 1.8em;
+    font-weight: 100;
 }
-
-// 2x
-@media
-only screen and (-webkit-min-device-pixel-ratio: 1.5), 
-only screen and (min--moz-device-pixel-ratio: 1.5),
-only screen and (min-device-pixel-ratio: 1.5) {
-@import "2x.less"; }
-

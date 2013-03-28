@@ -81,6 +81,11 @@ $app->register(new TwigServiceProvider, [
 
 $app->register(new \Pipe\Silex\PipeServiceProvider, ['pipe.root' => __DIR__ . '/assets']);
 
+$app['pipe.load_path'] = $app->extend('pipe.load_path', function($loadPath) {
+    $loadPath[] = __DIR__ . "/assets/components";
+    return $loadPath;
+});
+
 $app['markdown'] = $app->share(function() use ($app) {
     return new \Sundown\Markdown(new \Sundown\Render\HTML);
 });

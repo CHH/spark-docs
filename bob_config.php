@@ -34,7 +34,7 @@ task('site', ['_site', '_site/assets'], function() {
 });
 
 task('site:server', function() {
-    info('Started development server on localhost:3000');
+    println('----> Started development server on localhost:3000');
     sh('php -S localhost:3000 -t ./ router.php');
 });
 
@@ -49,7 +49,7 @@ task('checkout_source', function() {
         info('----> Checking out source...');
         if (is_dir(SOURCE_DIR)) sh(['rm', '-rf', SOURCE_DIR]);
 
-        sh("git clone git@github.com:CHH/spark " . SOURCE_DIR);
+        sh("git clone git@github.com:sparkframework/spark " . SOURCE_DIR);
     }
 
     info('----> Downloading Composer...');
@@ -72,7 +72,11 @@ task('dist', ['checkout_source'], function() {
     info('----> Building spark.phar');
 
     cd(SOURCE_DIR, function() {
-        sh('vendor/bin/bob deps dist', ['fail_on_error' => true]);
+        if (!is_file('box.phar')) {
+            sh('curl -s http://box-project.org/installer.php | php');
+        }
+
+        sh('php box.phar build --verbose', ['fail_on_error' => true]);
         copy('spark.phar', __DIR__ . '/_site/spark.phar');
     });
 
@@ -83,10 +87,10 @@ desc('Builds Spark\'s Homepage on Github.com');
 task('gh-pages', ['docs', 'dist', 'site'], function() {
     if (is_dir('_build/spark-gh-pages/.git')) {
         cd('_build/spark-gh-pages', function() {
-            sh('git pull git@github.com:CHH/spark gh-pages --ff');
+            sh('git pull git@github.com:sparkframework/spark gh-pages --ff');
         });
     } else {
-        sh(['git', 'clone', '--branch', 'gh-pages', 'git@github.com:CHH/spark', "_build/spark-gh-pages"], ['fail_on_error' => true]);
+        sh(['git', 'clone', '--branch', 'gh-pages', 'git@github.com:sparkframework/spark', "_build/spark-gh-pages"], ['fail_on_error' => true]);
     }
 
     $site = realpath('_site');
@@ -97,7 +101,7 @@ task('gh-pages', ['docs', 'dist', 'site'], function() {
         sh("git add -A", ['fail_on_error' => true]);
         sh("git commit -m 'Update website'");
 
-        sh('git push git@github.com:CHH/spark gh-pages', ['fail_on_error' => true]);
+        sh('git push git@github.com:sparkframework/spark gh-pages', ['fail_on_error' => true]);
     });
 });
 
